@@ -70,10 +70,11 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
-            escolha = ""
+            escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+                
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
