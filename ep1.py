@@ -3,7 +3,7 @@
 # Alunos: 
 # - aluno A: Manuel Castanares, manuelc@al.insper.edu.br
 # - aluno B: Thomas Bekhor, thomasb2@al.insper.edu.br
-jhgjhjjh
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
