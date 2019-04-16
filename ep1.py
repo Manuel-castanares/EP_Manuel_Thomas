@@ -59,8 +59,13 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
+        print(cenario_atual["titulo"])
+        
+        barras = "-"*len(cenario_atual["titulo"])
+        
+        print(barras)
+        
+        print(cenario_atual["descricao"])
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -84,3 +89,5 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+    
+    
