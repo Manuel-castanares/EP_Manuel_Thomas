@@ -75,7 +75,11 @@ def main():
         else:
 #<<<<<<< HEAD
            
+            print ()
+            
             print('Escolha sua opcao:')
+            
+            print()
             
             for local in opcoes:
                 
