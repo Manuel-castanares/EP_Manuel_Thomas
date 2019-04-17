@@ -77,7 +77,7 @@ def main():
            
             print ()
             
-            print('Escolha sua opcao:')
+            print('Escolha sua opção:')
             
             print()
             
