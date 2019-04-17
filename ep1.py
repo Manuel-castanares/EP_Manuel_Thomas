@@ -11,7 +11,7 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "banheiro": "Dar um cagão"
             }
         },
         "andar professor": {
@@ -23,17 +23,18 @@ def carregar_cenarios():
             }
         },
         "professor": {
-            "titulo": "O monstro do Python",
+            "titulo": "O monstro do Python: El Tochi",
             "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
+                         "O professor revelou que é um domador de cobras "
+                         "e assim, soltou na sala uma grande anaconda, "
+                         "uma mamba negra e sua favorita, a python blackboardiana.",
             "opcoes": {}
         },
-        "biblioteca": {
+        "banheiro": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
+            "descricao": "Voce esta no banheiro fedorento",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguão de entrada"
             }
         }
     }
@@ -70,7 +71,7 @@ def main():
         opcoes = cenario_atual['opcoes']
         
         if len(opcoes) == 0:
-            print("Acabaram-se suas opções! Mwo mwo mwooooo...")
+            print("Você foi devorado! Miou pra voce parça... Aiaiaiuiuiui")
             game_over = True
         else:
 #<<<<<<< HEAD
