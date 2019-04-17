@@ -73,14 +73,18 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-<<<<<<< HEAD
+#<<<<<<< HEAD
            
             print('Escolha sua opcao:')
             
-            print(opcoes)
-=======
+            for local in opcoes:
+                
+                print("{0}: {1}".format(local, opcoes[local]))
+            
+            
+#=======
 
->>>>>>> 8052eadd886d4bc9a73c4a5f0b79bc6ed6e2bb25
+#>>>>>>> 8052eadd886d4bc9a73c4a5f0b79bc6ed6e2bb25
             escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
