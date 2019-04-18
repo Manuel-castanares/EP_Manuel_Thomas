@@ -93,11 +93,18 @@ def main():
                 print("{0}: {1}".format(local, opcoes[local]))
             
             
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1839875e162191bfdd92358a0d1722e378ed3359
             escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
                 
                 nome_cenario_atual = escolha
+            if escolha=='banheiro':
+                print('Voce encontrou a loira do banheiro!')
+              
                 
                 if escolha == "sala professor" and verdade:
                     
