@@ -56,6 +56,10 @@ def main():
 
     cenarios, nome_cenario_atual = carregar_cenarios()
 
+    player1 = 100 
+    
+    verdade = True
+    
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
@@ -67,14 +71,16 @@ def main():
         print(barras)
         
         print(cenario_atual["descricao"])
+        
+        
 
         opcoes = cenario_atual['opcoes']
         
         if len(opcoes) == 0:
             print("Você foi devorado! Miou pra voce parça... Aiaiaiuiuiui")
             game_over = True
+            
         else:
-#<<<<<<< HEAD
            
             print ()
             
@@ -87,16 +93,23 @@ def main():
                 print("{0}: {1}".format(local, opcoes[local]))
             
             
-#=======
-
-#>>>>>>> 8052eadd886d4bc9a73c4a5f0b79bc6ed6e2bb25
             escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
+                
                 nome_cenario_atual = escolha
                 
-                print('Escolha sua opção:')
-                print(cenario_atual['opcoes'])
+                if escolha == "sala professor" and verdade:
+                    
+                    print()
+                    
+                    print("Você encontrou uma espada: +50 hit points")
+                    
+                    print()
+                        
+                    player1 += 50
+                        
+                    verdade = False
                           
             else:
                 print("Sua indecisão foi sua ruína!")
