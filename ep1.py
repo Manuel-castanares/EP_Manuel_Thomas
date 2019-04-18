@@ -10,28 +10,28 @@ def carregar_cenarios():
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
-                "andar professor": "Tomar o elevador para o andar do professor",
+                "sala professor": "Tomar o elevador para o andar do professor",
                 "banheiro": "Dar um cagão"
             }
         },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
+        "sala professor": {
+            "titulo": "sala do desespero",
+            "descricao": "Voce esta na frente da sala do professor",
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
+                "de cara com o perigo": "Bater na porta"
             }
         },
-        "professor": {
+        "de cara com o perigo": {
             "titulo": "O monstro do Python: El Tochi",
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um domador de cobras "
                          "e assim, soltou na sala uma grande anaconda, "
-                         "uma mamba negra e sua favorita, a python blackboardiana.",
+                         "uma mamba negra e sua favorita, a python blackboardiana. Voce foi devorado como Ragnar Lothbrook",
             "opcoes": {}
         },
         "banheiro": {
-            "titulo": "Caverna da tranquilidade",
+            "titulo": "Caverna escura",
             "descricao": "Voce esta no banheiro fedorento",
             "opcoes": {
                 "inicio": "Voltar para o saguão de entrada"
