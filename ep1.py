@@ -74,7 +74,6 @@ def main():
             print("Você foi devorado! Miou pra voce parça... Aiaiaiuiuiui")
             game_over = True
         else:
-#<<<<<<< HEAD
            
             print ()
             
@@ -87,13 +86,14 @@ def main():
                 print("{0}: {1}".format(local, opcoes[local]))
             
             
-#=======
 
-#>>>>>>> 8052eadd886d4bc9a73c4a5f0b79bc6ed6e2bb25
             escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+            if escolha=='banheiro':
+                print('Voce encontrou a loira do banheiro!')
+              
                 
                 print('Escolha sua opção:')
                 print(cenario_atual['opcoes'])
