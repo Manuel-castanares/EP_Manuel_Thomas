@@ -91,8 +91,8 @@ def main():
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-            if escolha=='banheiro':
-                print('Voce encontrou a loira do banheiro!')
+                if escolha=='banheiro':
+                    print('Voce encontrou a loira do banheiro!')
               
                 
                 print('Escolha sua opção:')
