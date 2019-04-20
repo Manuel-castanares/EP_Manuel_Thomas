@@ -68,7 +68,11 @@ def main():
     
     emocional = 100
     
+    ataque = 20
+    
     verdade = True
+    
+    elevador = True
     
     game_over = False
     while not game_over:
@@ -89,6 +93,10 @@ def main():
         print()
         
         print("Seu emocional está em : {0}" .format(emocional))
+        
+        print()
+        
+        print("seu ataque está em : {0}".format(ataque))
 
         opcoes = cenario_atual['opcoes']
         
@@ -123,6 +131,8 @@ def main():
                 
                     print("-25 hit points")
                     
+                    print("-10 emocional")
+                    
                     player1 -= 25
                     emocional -=10
                     print()
@@ -130,44 +140,69 @@ def main():
                 
                 if escolha == "sala professor" and verdade:
                     
+                    funcionario = {"hitpoints": 35, "ataque": 5}
+                    
                     print()
                     
-                    print("Você encontrou uma espada: +50 hit points")
+                    print("Você encontrou uma espada: +50 pontos de ataque")
                     
-                    player1 += 50
+                    ataque += 50
                     
                     print()
                     
                     verdade = False
-                        
-                    print('O elevador esta lotado, você terá que ir de escada')
                     
-                    print()
+                    if elevador:
                     
-                    print('O funcionario da casa do pao de queijo apareceu:')
+                        print('O elevador esta lotado, você terá que ir de escada')
                     
-                    print('Ele quer te desafiar pra uma luta pois acabou de ser demitido.')
-                    
-                    print() 
-                    
-                    print('Player 1: {0} hitpoints, {1} de emocional' .format(player1, emocional))
-                    
-                    print('Funcionario demitido: 80 hitpoints, 20 emocional')
-                    
-                    print()
-                    
-                    decisao=input('Voce deseja correr ou lutar?: ')
-                    
-                    if decisao =='lutar':
-                        
-                        print('Player 1 atacou e causou uma morte emocional ao ex-funcionario, coitado!')
-                        
-                    else:
-                        print('Voce é um frangolone')
-                        
                         print()
                     
-                        emocional -=15
+                        print('O funcionario da casa do pao de queijo apareceu:')
+                    
+                        print('Ele quer te desafiar pra uma luta pois acabou de ser demitido.')
+                    
+                        print() 
+                    
+                        print('Player 1: {0} hitpoints, {1} de emocional, {2} de ataque' .format(player1, emocional, ataque))
+                    
+                        print("Funcionario demitido: hitpoints: {0}, ataque: {1}".format(funcionario["hitpoints"], funcionario["ataque"]))
+                    
+                        print()
+                    
+                        decisao=input('Voce deseja correr ou lutar?: ')
+                    
+                        if decisao =='lutar':
+    
+                            if ataque > funcionario["hitpoints"]:
+                        
+                                print('Player 1 atacou e causou uma morte emocional ao ex-funcionario, coitado!')
+                            
+                                print()
+                            
+                                print("Na luta, o ex-funcionario jogou um pão de queijo na sua cara")
+                            
+                                print()
+                            
+                                print("-5 hitpoints")
+                                
+                                player1 -= 5
+                                
+                                elevador = False
+                                
+                                print()
+                                
+                                print("elevador desbloqueado!")
+                            
+                        else:
+                            
+                            print('Voce é um frangolone')
+                        
+                            print()
+                        
+                            print("-15 emocional")
+                        
+                            emocional -=15
                     
                           
             else:
