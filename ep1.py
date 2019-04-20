@@ -22,7 +22,7 @@ def carregar_cenarios():
                 "de cara com o perigo": "Bater na porta"
             }
         },
-        "de cara com o perigo": {
+        "Porta da sala": {
             "titulo": "O monstro do Python: El Tochi",
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um domador de cobras "
@@ -56,6 +56,10 @@ def main():
 
     cenarios, nome_cenario_atual = carregar_cenarios()
 
+    player1 = 100 
+    
+    verdade = True
+    
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
@@ -67,12 +71,17 @@ def main():
         print(barras)
         
         print(cenario_atual["descricao"])
+        
+        print()
+        
+        print("Seu total de hitpoints é: {0}".format(player1))
 
         opcoes = cenario_atual['opcoes']
         
         if len(opcoes) == 0:
             print("Você foi devorado! Miou pra voce parça... Aiaiaiuiuiui")
             game_over = True
+            
         else:
            
             print ()
@@ -85,18 +94,34 @@ def main():
                 
                 print("{0}: {1}".format(local, opcoes[local]))
             
-            
-
             escolha = input('O que você quer fazer?: ')
 
             if escolha in opcoes:
+                
                 nome_cenario_atual = escolha
+
                 if escolha=='banheiro':
-                    print('Voce encontrou a loira do banheiro!')
+
+                    print("Voce encontrou a loira do banheiro e se assutou brutalmente:") 
+                
+                    print("-25 hit points")
+                    
+                    player1 -= 25
+                    
+                    print()
               
                 
-                print('Escolha sua opção:')
-                print(cenario_atual['opcoes'])
+                if escolha == "sala professor" and verdade:
+                    
+                    print()
+                    
+                    print("Você encontrou uma espada: +50 hit points")
+                    
+                    print()
+                        
+                    player1 += 50
+                        
+                    verdade = False
                           
             else:
                 print("Sua indecisão foi sua ruína!")
