@@ -11,9 +11,17 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "sala professor": "Tomar o elevador para o andar do professor",
-                "banheiro": "Dar um cagão"
+                "banheiro": "Dar um cagão",
+                "biblioteca":"fingir que vai estudar pra prova de Dessoft"
             }
         },
+        "biblioteca": {
+            "titulo": " Lugar de estudos",
+            "descricao": "Lugar silencioso com muitas pessoas bonitas",
+            "opcoes": {
+                  "inicio": "Tomar o elevador para o saguao de entrada",
+                  "banheiro": "Dar um cagão"}},
+          
         "sala professor": {
             "titulo": "sala do desespero",
             "descricao": "Voce esta na frente da sala do professor",
@@ -29,23 +37,28 @@ def carregar_cenarios():
                          "e assim, soltou na sala uma grande anaconda, "
                          "uma mamba negra e sua favorita, a python blackboardiana.",
             "opcoes": {
-                "sala coordenação: fugir para a sala mestre",
-                "insistir: continuar tentando com El Tochi: domador"}
-        },
-        "banheiro": {
+                "sala coordenação": "fugir para a sala mestre",
+                "insistir": "continuar tentando com El Tochi, o domador"}},
+       
+       "insistir": {
+               "titulo": "ainda na sala de El Tochi",
+               "descricao": "",
+               "opcoes":{}
+            },
+        
+       "banheiro": {
             "titulo": "Caverna escura",
             "descricao": "Voce esta no banheiro fedorento",
             "opcoes": {
-                "inicio": "Voltar para o saguão de entrada"
-            }
+                "inicio": "Voltar para o saguão de entrada"}
         },
         "sala coordenação": {
              "titulo": " Carol da Costa cafofo's",
              "descricao": "Após nao suceder na sala do El Tochi," 
                           "voce encontrou a sala de controle total do insper",
-             "opcoes": {
-                 "Entrar computador": "alterar entrega EP"}
-        }}
+             "opcoes": {}
+             }}
+        
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -69,6 +82,8 @@ def main():
     emocional = 100
     
     verdade = True
+    
+    chave_no_bolso=False
     
     game_over = False
     while not game_over:
@@ -127,7 +142,22 @@ def main():
                     emocional -=10
                     print()
              
-                
+                if escolha=="biblioteca":
+                    
+                    print()
+                    
+                    print("Voce achou uma chave estranha")
+                    
+                    print()
+                    
+                    chave=input("Guardar ou deixar como esta?: ")
+                    
+                    print()
+                    
+                    if chave=="Guardar":
+                        
+                        chave_no_bolso=True
+                        
                 if escolha == "sala professor" and verdade:
                     
                     print()
@@ -168,11 +198,24 @@ def main():
                         print()
                     
                         emocional -=15
+                 
+                if escolha=="sala coordenação":
                     
+                    if chave_no_bolso
+                   
+                        print()
+                    
+                        print("Voce conseguiu alterar a data da entrega do EP")
+                    
+                        print("no computador da Carol da Costa, parabens!")
+                    
+                    else:
+                        
+                        print("Voce nao tem a chave para esta sala")   
                           
             else:
                 
-                print('O adiamento do EP nã foi um sucesso')
+                print('O adiamento do EP não foi um sucesso')
                 
                 print()
                 
