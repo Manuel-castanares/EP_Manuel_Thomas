@@ -63,6 +63,7 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+import random
 
 def main():
     print("Na hora do sufoco!")
@@ -155,6 +156,30 @@ def main():
                     
                     print("-10 emocional")
                     
+                    print()
+                    
+                    print("Você encontrou uma porta secreta no banheiro de deficientes.")
+                    
+                    print("Nela esta escrito: Transporte-se para qualquer sala")
+                    
+                    print("se acertar um numero sorteado de 1 a 5.")
+                    
+                    numero_aleat=random.randint(0,5)
+                    
+                    numero=input("numero de 1 a 5: ")
+                    
+                    if numero_aleat==numero:
+                        
+                        print("Voce acertou, escolha uma sala entre as seguintes")
+                        
+                        print("para se teletransportar: biblioteca, sala professor, sala coordenação, Porta da sala")
+                        
+                        teletransporte=input("Sala escolhida: ")
+                        
+                        
+                    else:
+                        
+                        print("Voce errou, volte mais tarde")
                     player1 -= 25
                     emocional -=10
                     
