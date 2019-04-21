@@ -92,7 +92,9 @@ def main():
     
     game_over = False
     
-    while not game_over:
+    menina = True
+    
+    while not game_over and player1 > 0:
         cenario_atual = cenarios[nome_cenario_atual]
 
         print(cenario_atual["titulo"])
@@ -156,23 +158,87 @@ def main():
                     print()
                     
                     
+                    
              
                 if escolha=="biblioteca":
+
+                    if menina:
                     
-                    print()
+                        print("Tem uma menina que não entendeu algumas coisas sobre python...")
                     
-                    print("Voce achou uma chave estranha")
+                        print("ela pediu a sua ajuda" )
                     
-                    print()
+                        ajuda = input("quer ajudar, sim ou não?: ")
                     
-                    chave = input("Guardar ou deixar como esta?: ")
-                    
-                    print()
-                    
-                    if chave == "Guardar":
+                        if ajuda == "sim":
+                            print()
+                            print("ela pergunta se abre dicionarios com chave ou parênteses.")
                         
-                        chave_no_bolso = True
+                            dic_chaves = input("chave ou parênteses?: ")
                         
+                            if dic_chaves == "chave":
+                                print()
+                                print("muito bem! +10 emocional")
+                            
+                                emocional += 10
+                            
+                                print("agora ela quer usar um numero decimal. O que ela usa?")
+                            
+                                numero = input("float ou int?: ")
+                            
+                                if numero == "float":
+                                
+                                    print()
+                                    print("muito bem! +10 emocional")
+                                
+                                    emocional += 10
+                                    
+                                    print("Ela faz uma última pergunta...")
+                                    
+                                    print()
+                                    
+                                    lançamento = int(input("Em que ano foi lançado o python?: "))
+                                    
+                                    if lançamento == 1989:
+                                        
+                                        print("Ela está muito agradecida e te entrega uma chave estranha!")
+                                        
+                                        print()
+                                        
+                                        chave = input("Guardar ou devolver?: ")
+                    
+                                        print()
+                    
+                                        if chave == "Guardar":
+                        
+                                            chave_no_bolso = True
+                                        
+                                        menina = False
+                                        
+                                    else:
+                                        
+                                        print ()
+                                        
+                                        print("Esse ano é incorreto, -30 emocional")
+                                        
+                                        print ()
+                                        
+                                        emocional -= 20
+                                        
+                                else:
+                                    print ()
+                                    print("ela descubriu que não é int! -20 emocional")
+                                    print()
+                                    emocional -= 20  
+                                    
+                                
+                                
+                            else: 
+                                print()
+                                print("ela ficou brava! -20 emocional")
+                                print()
+                                emocional -= 20
+                                
                 if escolha == "sala professor" and verdade:
                     
                     funcionario = {"hitpoints": 35, "ataque": 5}
@@ -251,8 +317,12 @@ def main():
                         print()
                     
                         print("Voce conseguiu alterar a data da entrega do EP")
+                        
+                        print()
                     
                         print("no computador da Carol da Costa, parabens!")
+                        
+                        print()
                     
                     else:
                         
