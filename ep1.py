@@ -84,11 +84,11 @@ def main():
     
     ataque = 20
     
+    inventário = []
+    
     verdade = True
     
     elevador = True
-
-    chave_no_bolso = False
     
     game_over = False
     
@@ -118,6 +118,7 @@ def main():
         print()
         
         print("seu ataque está em : {0}".format(ataque))
+        
 
         opcoes = cenario_atual['opcoes']
         
@@ -212,8 +213,10 @@ def main():
                                         print()
                     
                                         if chave == "Guardar":
+                                            
+                                            print("Chave adicionada ao inventário")
                         
-                                            chave_no_bolso = True
+                                            inventário.append("Chave")
                                         
                                         menina = False
                                         
@@ -250,6 +253,12 @@ def main():
                     print("Você encontrou uma espada: +50 pontos de ataque")
                     
                     ataque += 50
+                    
+                    print()
+                    
+                    inventário.append("espada")
+                    
+                    print("espada adicionada ao inventário")
                     
                     print()
                     
@@ -314,7 +323,7 @@ def main():
                  
                 if escolha == "sala coordenação":
                     
-                    if chave_no_bolso:
+                    if "Chave" in inventário:
                    
                         print()
                     
