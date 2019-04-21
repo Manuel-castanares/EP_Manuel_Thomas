@@ -323,28 +323,47 @@ def main():
                  
                 if escolha == "sala coordenação":
                     
-                    if "Chave" in inventário:
+                    print()
+                    
+                    print("Você precisa de uma chave para entrar!")
+                    
+                    print()
+                    
+                    procura_chave = input("Quer abrir seu inventário para ver se tem uma chave? sim ou não?: ")
+                    
+                    if procura_chave == "sim":
+                        
+                        print(inventário)
+                        
+                    
+                        if "Chave" in inventário:
+                            
+                            print("Deseja usar a chave?")
+                            
+                            utilizar_chave = input("sim ou não?: ")
+                            
+                            if utilizar_chave == "sim":
                    
-                        print()
+                                print()
                     
-                        print("Voce conseguiu alterar a data da entrega do EP")
+                                print("Voce conseguiu alterar a data da entrega do EP")
                         
-                        print()
+                                print()
                     
-                        print("no computador da Carol da Costa, parabens!")
+                                print("no computador da Carol da Costa, parabens!")
                         
-                        print()
+                                print()
                         
-                        game_over = True
+                                game_over = True
                     
-                        vencer = True
-                    else:
+                                vencer = True
+                        else:
                         
-                        print ()
+                            print ()
                         
-                        print("Voce nao tem a chave para esta sala")
+                            print("Voce nao tem a chave para esta sala")
                         
-                        print()
+                            print()
                         
                         
                           
