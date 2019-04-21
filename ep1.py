@@ -63,8 +63,6 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-import random
-
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -78,7 +76,9 @@ def main():
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
-
+    
+    import random
+    
     player1 = 100
     
     emocional = 100
@@ -87,11 +87,15 @@ def main():
     
     inventário = []
     
+    loira_banheiro = True
+    
     verdade = True
     
     elevador = True
     
     game_over = False
+    
+    transporte = True
     
     menina = True
     
@@ -148,45 +152,92 @@ def main():
                 
                 nome_cenario_atual = escolha
 
-                if escolha=='banheiro':
+                if escolha == 'banheiro':
+                    
+                    if loira_banheiro:
 
-                    print("Voce encontrou a loira do banheiro e se assutou brutalmente:") 
+                        print("Voce encontrou a loira do banheiro e se assutou brutalmente:") 
                 
-                    print("-25 hit points")
+                        print("-25 hit points")
                     
-                    print("-10 emocional")
+                        print("-10 emocional")
                     
-                    print()
+                        print()
                     
-                    print("Você encontrou uma porta secreta no banheiro de deficientes.")
+                        player1 -= 25
                     
-                    print("Nela esta escrito: Transporte-se para qualquer sala")
-                    
-                    print("se acertar um numero sorteado de 1 a 5.")
-                    
-                    numero_aleat=random.randint(0,5)
-                    
-                    numero=input("numero de 1 a 5: ")
-                    
-                    if numero_aleat==numero:
+                        emocional -=10
                         
-                        print("Voce acertou, escolha uma sala entre as seguintes")
+                        loira_banheiro = False
+                    
+                    if transporte:
                         
-                        print("para se teletransportar: biblioteca, sala professor, sala coordenação, Porta da sala")
+                        print("Você encontrou uma porta secreta no banheiro de deficientes.")
+                    
+                        print("Nela esta escrito: Transporte-se para qualquer sala")
+                    
+                        print("se acertar um numero sorteado de 1 a 5.")
+                    
+                        numero_aleat = random.randint(1, 20)
                         
-                        teletransporte=input("Sala escolhida: ")
+                        i = 0
                         
+                        acertou_numero = True
                         
+                        while i <= 4 and acertou_numero:
+                            
+                            numero = int(input("numero entre 1 e 20: "))
+                            
+                            if numero < numero_aleat:
+                        
+                                print("Voce errou! tente um numero maior")
+                                print()
+                                
+                            elif numero > numero_aleat:
+                                
+                                print("Voce errou! tente um numero menor")
+                                print()
+                            
+                            else:
+                            
+                                print("Voce acertou, escolha uma sala entre as seguintes")
+                         
+                                print("para se teletransportar: biblioteca, sala professor, sala coordenação, Porta da sala")
+                        
+                                teletransporte = input("Sala escolhida: ")
+                        
+                                escolha = teletransporte
+                            
+                                nome_cenario_atual = teletransporte
+                            
+                                transporte = False
+                                
+                                acertou_numero = False
+                                
+                            i += 1
+                            
+                        if i == 4:
+                            
+                            print()
+                            print("Volte mais tarde!")
+                            print()
+                            
                     else:
                         
-                        print("Voce errou, volte mais tarde")
-                    player1 -= 25
-                    emocional -=10
-                    
-                    print()
-                    
-                    
-                    
+                        print()
+                        
+                        print("O teletransportador já está desbloqueado!")
+                        
+                        print()
+                        
+                        print("teletransportar para: biblioteca, sala professor, sala coordenação, Porta da sala")
+                        
+                        teletransporte = input("Sala escolhida: ")
+                        
+                        escolha = teletransporte
+                        
+                        nome_cenario_atual = teletransporte
+                        
              
                 if escolha=="biblioteca":
 
