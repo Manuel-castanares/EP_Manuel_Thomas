@@ -56,8 +56,9 @@ def carregar_cenarios():
              "titulo": " Carol da Costa cafofo's",
              "descricao": "Após nao suceder na sala do El Tochi," 
                           "voce encontrou a sala de controle total do insper",
-             "opcoes": {}
-             }}
+             "opcoes": {
+                     "inicio": "Voltar para o saguão de entrada"}}
+             }
         
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -85,13 +86,12 @@ def main():
     
     verdade = True
     
-<<<<<<< HEAD
     elevador = True
-=======
-    chave_no_bolso=False
->>>>>>> 4c200fc7c97551859bfeccd9a4c1131dd277ed79
+
+    chave_no_bolso = False
     
     game_over = False
+    
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
@@ -152,7 +152,10 @@ def main():
                     
                     player1 -= 25
                     emocional -=10
+                    
                     print()
+                    
+                    
              
                 if escolha=="biblioteca":
                     
@@ -162,13 +165,13 @@ def main():
                     
                     print()
                     
-                    chave=input("Guardar ou deixar como esta?: ")
+                    chave = input("Guardar ou deixar como esta?: ")
                     
                     print()
                     
-                    if chave=="Guardar":
+                    if chave == "Guardar":
                         
-                        chave_no_bolso=True
+                        chave_no_bolso = True
                         
                 if escolha == "sala professor" and verdade:
                     
@@ -232,19 +235,18 @@ def main():
                         
                             print()
                         
-<<<<<<< HEAD
+
                             print("-15 emocional")
                         
                             emocional -=15
-=======
+
                         print()
                     
                         emocional -=15
                  
-                if escolha=="sala coordenação":
->>>>>>> 4c200fc7c97551859bfeccd9a4c1131dd277ed79
+                if escolha == "sala coordenação":
                     
-                    if chave_no_bolso
+                    if chave_no_bolso:
                    
                         print()
                     
@@ -254,7 +256,13 @@ def main():
                     
                     else:
                         
-                        print("Voce nao tem a chave para esta sala")   
+                        print ()
+                        
+                        print("Voce nao tem a chave para esta sala")
+                        
+                        print()
+                        
+                        
                           
             else:
                 
