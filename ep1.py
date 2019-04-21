@@ -94,6 +94,8 @@ def main():
     
     menina = True
     
+    vencer = False
+    
     while not game_over and player1 > 0:
         cenario_atual = cenarios[nome_cenario_atual]
 
@@ -323,7 +325,10 @@ def main():
                         print("no computador da Carol da Costa, parabens!")
                         
                         print()
+                        
+                        game_over = True
                     
+                        vencer = True
                     else:
                         
                         print ()
@@ -342,8 +347,14 @@ def main():
                 
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-            
-    print("Você morreu!")
+    
+    if vencer:
+        
+        print("você conseguiu adiar o EP!")
+        
+    else:  
+        
+        print("Você morreu!")
 
 
 # Programa principal.
