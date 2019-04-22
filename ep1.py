@@ -176,7 +176,7 @@ def main():
                     
                         print("Nela esta escrito: Transporte-se para qualquer sala")
                     
-                        print("se acertar um numero sorteado de 1 a 5.")
+                        print("se acertar um numero sorteado de 1 a 20.")
                     
                         numero_aleat = random.randint(1, 20)
                         
@@ -209,6 +209,8 @@ def main():
                                 escolha = teletransporte
                             
                                 nome_cenario_atual = teletransporte
+                                
+                                telet=cenarios[teletransporte]
                             
                                 transporte = False
                                 
@@ -238,6 +240,27 @@ def main():
                         
                         nome_cenario_atual = teletransporte
                         
+                        telet=cenarios[teletransporte]
+                  
+                    print(telet["titulo"])
+        
+                    barras = "-"*len(telet["titulo"])
+        
+                    print(barras)
+                
+                    print(telet["descricao"])
+        
+                    print()
+        
+                    print("Seu total de hitpoints é: {0}".format(player1))
+        
+                    print()
+        
+                    print("Seu emocional está em : {0}" .format(emocional))
+        
+                    print()
+        
+                    print("seu ataque está em : {0}".format(ataque))
              
                 if escolha=="biblioteca":
 
@@ -429,7 +452,42 @@ def main():
                                 print("no computador da Carol da Costa, parabens!")
                         
                                 print()
-                        
+                                
+                                print("Mas calma, ainda nao acabou. A secretaria da carol da Costa")
+                                
+                                print("te viu hackeando o computador dela")
+                                
+                                print("Ela está pedindo 60 hitpoints como suborno para manter em segredo")
+                                
+                                segredo=input("Pagar ou correr o risco?: ")
+                                
+                                if segredo == "Pagar":
+                                    
+                                    if player1>50:
+                                    
+                                        player1-=50
+                                    
+                                        print("Agora sim sua missao foi concluida!")
+                                    
+                                    if player1<50:
+                                        
+                                        print("Voce nao tem hitpoints suficientes, vai ter que correr o risco")
+                                    
+                                    if player1==50:
+                                        
+                                        player1-=50
+                                        
+                                        print("Voce pagou o suborno porem perdeu todos seus hitpoints e morreu")
+                                        
+                                        print("Porem o adiamento foinconcluido mesmo assim")
+                                        
+                                        print("e seus colegas vao fazer um belo EP para honrar a sua dificil missao. " )
+                                
+                                else:
+                                    
+                                    print("Run away, voce tem o risco de ser jubilado")
+                                    
+                                    
                                 game_over = True
                     
                                 vencer = True
