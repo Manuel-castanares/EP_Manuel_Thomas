@@ -138,7 +138,6 @@ def main():
             monstro_luta = input("Quer lutar ou correr? ")
             
             if monstro_luta == "lutar":
-                if ataque > 30:
                     print()
                     print("Você acabou com ele!")
                     print()
@@ -214,8 +213,8 @@ def main():
                         
                                 print("Voce errou! tente um numero maior")
                                 print()
-                                print("-15 hitpoints")
-                                player1 -= 15
+                                print("-10 hitpoints")
+                                player1 -= 10
                                 i += 1
                                 
                             elif numero > numero_aleat:
@@ -223,8 +222,8 @@ def main():
                                 print()
                                 print("Voce errou! tente um numero menor")
                                 print()
-                                print("-15 hitpoints")
-                                player1 -= 15
+                                print("-10 hitpoints")
+                                player1 -= 10
                                 i += 1
                                 
                             else:
