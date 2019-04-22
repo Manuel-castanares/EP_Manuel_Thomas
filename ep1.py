@@ -395,7 +395,7 @@ def main():
                             
                                 print()
                             
-                                print("-5 hitpoints")
+                                print("-15 hitpoints")
                                 
                                 player1 -= 5
                                 
