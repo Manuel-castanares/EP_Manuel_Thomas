@@ -463,17 +463,17 @@ def main():
                                 
                                 if segredo == "Pagar":
                                     
-                                    if player1>50:
+                                    if player1 > 50:
                                     
-                                        player1-=50
+                                        player1 -= 60
                                     
                                         print("Agora sim sua missao foi concluida!")
                                     
-                                    if player1<50:
+                                    elif player1 < 50:
                                         
                                         print("Voce nao tem hitpoints suficientes, vai ter que correr o risco")
                                     
-                                    if player1==50:
+                                    else:
                                         
                                         player1-=50
                                         
