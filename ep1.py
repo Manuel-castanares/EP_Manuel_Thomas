@@ -11,7 +11,7 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "sala professor": "Tomar o elevador para o andar do professor",
-                "banheiro": "Dar um cagão",
+                "banheiro": "Precisa ir no banheiro",
                 "biblioteca":"fingir que vai estudar pra prova de Dessoft"
             }
         },
@@ -20,7 +20,7 @@ def carregar_cenarios():
             "descricao": "Lugar silencioso com muitas pessoas bonitas",
             "opcoes": {
                   "inicio": "Tomar o elevador para o saguao de entrada",
-                  "banheiro": "Dar um cagão"}},
+                  "banheiro": "Precisa ir no banheiro"}},
           
         "sala professor": {
             "titulo": "sala do desespero",
@@ -529,9 +529,9 @@ def main():
                                         
                                                 player1-=50
                                         
-                                                print("Voce pagou o suborno porem perdeu todos seus hitpoints e morreu")
+                                                print("Voce pagou o suborno porem perdeu todos seus hitpoints e morreu,")
                                         
-                                                print("Porem o adiamento foinconcluido mesmo assim")
+                                                print("o adiamento foi concluido mesmo assim")
                                         
                                                 print("e seus colegas vao fazer um belo EP para honrar a sua dificil missao. " )
                                                 
