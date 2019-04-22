@@ -101,7 +101,10 @@ def main():
     
     vencer = False
     
+    senha = True
+    
     while not game_over and player1 > 0:
+        
         cenario_atual = cenarios[nome_cenario_atual]
 
         print(cenario_atual["titulo"])
@@ -124,7 +127,26 @@ def main():
         
         print("seu ataque está em : {0}".format(ataque))
         
-
+        monstro = random.randint(1, 10)
+        
+        if monstro == 3:
+            
+            print("Um aluno da GV apareceu no Insper e quer lutar!")
+            
+            print()
+            
+            monstro_luta = input("Quer lutar ou correr? ")
+            
+            if monstro_luta == "lutar":
+                if ataque > 30:
+                    print()
+                    print("Você acabou com ele!")
+                    print()
+                    print("hitpoints: +30, emocional: +20")
+                    
+                    player1 += 30
+                    emocional += 20
+                    
         opcoes = cenario_atual['opcoes']
         
         if len(opcoes) == 0:
@@ -192,12 +214,19 @@ def main():
                         
                                 print("Voce errou! tente um numero maior")
                                 print()
+                                print("-15 hitpoints")
+                                player1 -= 15
+                                i += 1
                                 
                             elif numero > numero_aleat:
                                 
+                                print()
                                 print("Voce errou! tente um numero menor")
                                 print()
-                            
+                                print("-15 hitpoints")
+                                player1 -= 15
+                                i += 1
+                                
                             else:
                             
                                 print("Voce acertou, escolha uma sala entre as seguintes")
@@ -209,14 +238,12 @@ def main():
                                 escolha = teletransporte
                             
                                 nome_cenario_atual = teletransporte
-                                
-                                telet=cenarios[teletransporte]
                             
                                 transporte = False
                                 
                                 acertou_numero = False
                                 
-                            i += 1
+                            
                             
                         if i == 4:
                             
@@ -240,29 +267,8 @@ def main():
                         
                         nome_cenario_atual = teletransporte
                         
-                        telet=cenarios[teletransporte]
-                  
-                    print(telet["titulo"])
-        
-                    barras = "-"*len(telet["titulo"])
-        
-                    print(barras)
-                
-                    print(telet["descricao"])
-        
-                    print()
-        
-                    print("Seu total de hitpoints é: {0}".format(player1))
-        
-                    print()
-        
-                    print("Seu emocional está em : {0}" .format(emocional))
-        
-                    print()
-        
-                    print("seu ataque está em : {0}".format(ataque))
              
-                if escolha=="biblioteca":
+                if escolha == "biblioteca":
 
                     if menina:
                     
@@ -279,7 +285,9 @@ def main():
                             dic_chaves = input("chave ou parênteses?: ")
                         
                             if dic_chaves == "chave":
+                                
                                 print()
+                                
                                 print("muito bem! +10 emocional")
                             
                                 emocional += 10
@@ -309,15 +317,13 @@ def main():
                                         
                                         chave = input("Guardar ou devolver?: ")
                     
-                                        print()
-                    
                                         if chave == "Guardar":
                                             
                                             print("Chave adicionada ao inventário")
                         
                                             inventário.append("Chave")
                                         
-                                        menina = False
+                                            menina = False
                                         
                                     else:
                                         
@@ -330,7 +336,7 @@ def main():
                                         emocional -= 20
                                         
                                 else:
-                                    print ()
+                                    print()
                                     print("ela descubriu que não é int! -20 emocional")
                                     print()
                                     emocional -= 20  
@@ -395,7 +401,7 @@ def main():
                             
                                 print()
                             
-                                print("-15 hitpoints")
+                                print("-5 hitpoints")
                                 
                                 player1 -= 5
                                 
@@ -404,6 +410,24 @@ def main():
                                 print()
                                 
                                 print("elevador desbloqueado!")
+                                
+                                print()
+                                
+                                print("Você econtrou um papel com um enigma!")
+                                
+                                papel = "tdoesf"
+                                
+                                ver_enigma = input("Quer ver o enigma: sim ou não? ")
+                                
+                                if ver_enigma == "sim":
+                                    
+                                    print("o enigma diz: {0}".format(papel))
+                                    
+                                    inventário.append("tdoesf")
+                                    
+                                    print()
+                                    
+                                    print("enigma adicionado ao inventário")
                             
                         else:
                             
@@ -414,11 +438,7 @@ def main():
 
                             print("-15 emocional")
                         
-                            emocional -=15
-
-                        print()
-                    
-                        emocional -=15
+                            emocional -= 15
                  
                 if escolha == "sala coordenação":
                     
@@ -442,55 +462,99 @@ def main():
                             utilizar_chave = input("sim ou não?: ")
                             
                             if utilizar_chave == "sim":
+                                
+                                print("Agora precisa chutar a contrasenha do PC")
                    
                                 print()
-                    
-                                print("Voce conseguiu alterar a data da entrega do EP")
-                        
+                                
+                                palavra = input("Quer abrir o inventário para ver se tem alguma pista? ")
+                                
+                                if palavra == "sim":
+                                    
+                                    print(inventário)
+                                
+                                contador = 0
+                                
                                 print()
-                    
-                                print("no computador da Carol da Costa, parabens!")
-                        
+                                
+                                print("Voce tem 3 tentativas!")
+                                
                                 print()
                                 
-                                print("Mas calma, ainda nao acabou. A secretaria da carol da Costa")
-                                
-                                print("te viu hackeando o computador dela")
-                                
-                                print("Ela está pedindo 60 hitpoints como suborno para manter em segredo")
-                                
-                                segredo=input("Pagar ou correr o risco?: ")
-                                
-                                if segredo == "Pagar":
+                                while contador <3 and senha:
                                     
-                                    if player1 > 50:
+                                    chute = input("qual é a senha?: ")
                                     
-                                        player1 -= 60
+                                    if chute == "desoft":
                                     
-                                        print("Agora sim sua missao foi concluida!")
+                                        senha = False
+                    
+                                        print("Voce conseguiu alterar a data da entrega do EP")
+                        
+                                        print()
+                    
+                                        print("no computador da Carol da Costa, parabens!")
+                        
+                                        print()
+                                
+                                        print("Mas calma, ainda nao acabou. A secretaria da carol da Costa")
+                                
+                                        print("te viu hackeando o computador dela")
+                                
+                                        print("Ela está pedindo 60 hitpoints como suborno para manter em segredo")
+                                
+                                        segredo=input("Pagar ou correr o risco?: ")
+                                
+                                        if segredo == "Pagar":
                                     
-                                    elif player1 < 50:
+                                            if player1 > 50:
+                                    
+                                                player1 -= 60
+                                    
+                                                print("Agora sim sua missao foi concluida!")
+                                                
+                                                game_over = True
+                                                
+                                                vencer = True
+                                    
+                                            elif player1 < 50:
                                         
-                                        print("Voce nao tem hitpoints suficientes, vai ter que correr o risco")
+                                                print("Voce nao tem hitpoints suficientes, vai ter que correr o risco")
+                                                
+                                                game_over = True
+                                                
+                                                vencer = True
                                     
+                                            elif player1 == 50:
+                                        
+                                                player1-=50
+                                        
+                                                print("Voce pagou o suborno porem perdeu todos seus hitpoints e morreu")
+                                        
+                                                print("Porem o adiamento foinconcluido mesmo assim")
+                                        
+                                                print("e seus colegas vao fazer um belo EP para honrar a sua dificil missao. " )
+                                                
+                                                game_over = True
+                                                
+                                                vencer = True
+                                
+                                        else:
+                                    
+                                            print("Run away, voce tem o risco de ser jubilado")
+                                        
+                                            game_over = True
+                                            
+                                            vencer = True
                                     else:
                                         
-                                        player1-=50
+                                        print("Dica: primeiro semestre")
                                         
-                                        print("Voce pagou o suborno porem perdeu todos seus hitpoints e morreu")
-                                        
-                                        print("Porem o adiamento foinconcluido mesmo assim")
-                                        
-                                        print("e seus colegas vao fazer um belo EP para honrar a sua dificil missao. " )
+                                        contador += 1
                                 
-                                else:
-                                    
-                                    print("Run away, voce tem o risco de ser jubilado")
-                                    
-                                    
                                 game_over = True
                     
-                                vencer = True
+                                
                         else:
                         
                             print ()
